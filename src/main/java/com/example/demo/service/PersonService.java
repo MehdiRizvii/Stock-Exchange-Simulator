@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -30,14 +30,14 @@ public class PersonService {
         return personDao.selectAllPeople();
     }
 
-    public Optional<Person> getPersonById(UUID id){
-        return personDao.selectPersonById(id);
+    public Optional<Person> getPersonByPrice(BigDecimal price){
+        return personDao.selectPersonByPrice(price);
     }
-    public int deletePerson(UUID id){
-        return personDao.deletePersonById(id);
+    public int deletePerson(BigDecimal price){
+        return personDao.deletePersonByPrice(price);
     }
-    public int updatePerson(UUID id, Person newPerson){
-        return personDao.updatePersonById(id, newPerson);
+    public int updatePerson(BigDecimal price, Person newPerson){
+        return personDao.updatePersonByPrice(price, newPerson);
     }
 
 }
