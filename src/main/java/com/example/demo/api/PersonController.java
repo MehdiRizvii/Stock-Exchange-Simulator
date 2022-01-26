@@ -1,15 +1,18 @@
 package com.example.demo.api;
 
+
+import java.util.List;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Person;
 import com.example.demo.service.PersonService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import java.math.BigDecimal;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.UUID;
 
 @RequestMapping("api/v1/person")
 @RestController
@@ -23,25 +26,18 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@Valid @NotNull @RequestBody Person person){
+    public void addPerson(@Valid @NonNull @RequestBody Person person) {
         personService.addPerson(person);
     }
+
     @GetMapping
-public List<Person> getAllPeople(){
+    public List<Person> getAllPeople() {
         return personService.getAllPeople();
     }
+
     @GetMapping(path = "{price}")
-    public Person getPersonById(@PathVariable("price") BigDecimal price){
-        return personService.getPersonByPrice(price)                  //after sending a get request with that price we will either return the person, OR if they don't exisist we return null
-                .orElse(null);
-    }
-    @DeleteMapping(path = "{price}")
-    public void deletePersonByPrice(@PathVariable("price") BigDecimal price){
-        personService.deletePerson(price);
-    }
-    @PutMapping(path = "{price}")
-    public void updatePerson(@PathVariable("price") BigDecimal price, @Valid @NotNull @RequestBody Person personToUpdate){
-        personService.updatePerson(price, personToUpdate);
+    public List<Person> getPersonByPrice(@PathVariable("price") String price) {
+        return personService.getPersonByPrice(price);
     }
 
 }
