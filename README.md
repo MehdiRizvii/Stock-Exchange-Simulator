@@ -11,3 +11,22 @@ Utilizes Delete request in order to simulate purchasing and removal of the stock
 
 ![Screenshot](/Proof-of-Concept/1.png)
 
+![Screenshot](/Proof-of-Concept/2.png)
+
+![Screenshot](/Proof-of-Concept/3.png)
+
+![Screenshot](/Proof-of-Concept/4.png)
+
+![Screenshot](/Proof-of-Concept/5.png)
+
+![Screenshot](/Proof-of-Concept/6.png)
+
+![Screenshot](/Proof-of-Concept/7.png)
+
+![Screenshot](/Proof-of-Concept/8.png)
+
+![Screenshot](/Proof-of-Concept/9.png)
+
+
+
+
