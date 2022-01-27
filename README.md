@@ -9,7 +9,7 @@ Utilizes Get request in order to show all Market listings currently, also allows
 Utilizes Delete request in order to simulate purchasing and removal of the stock listing from the market place.
 
 
-![Screenshot](/Proof-of-Concept/1.png)
+![1](/Proof-of-Concept/1.png)
 
 ![Screenshot](/Proof-of-Concept/2.png)
 
