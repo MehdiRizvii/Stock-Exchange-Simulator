@@ -2,6 +2,7 @@ package com.example.demo.api;
 
 
 import java.util.List;
+import java.util.UUID;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
@@ -39,5 +40,11 @@ public class PersonController {
     public List<Person> getPersonByPrice(@PathVariable("price") String price) {
         return personService.getPersonByPrice(price);
     }
+    /*
+    @GetMapping(path = "{id}")
+    public List<Person> getPersonById(@PathVariable("id") UUID id) {
+        return personService.getPersonById(id);
+    }
+*/
 
 }

@@ -10,10 +10,26 @@ public interface PersonDao {
 
     List<Person> selectAllPeople();
 
-    int insertPerson(Person person);
+    int insertPerson(UUID id, Person person);
 
-    UUID id = UUID.randomUUID();
+    default int insertPerson(Person person){
+        UUID id = UUID.randomUUID();
+        return insertPerson(id, person);
+
+    }
+
+
+
+    // UUID id = UUID.randomUUID();
+
+
+
+
+
 
     List<Person> selectPersonByPrice(String price);
+
+  //  List<Person> selectPersonById(UUID id);
+
 
 }

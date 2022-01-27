@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,11 @@ public class PersonService {
     public List<Person> getPersonByPrice(String price) {
         return personDao.selectPersonByPrice(price);
     }
+    /*
+    public List<Person> getPersonById(UUID id){
+        return personDao.selectPersonById(id);
+    }
+*/
 
 }
 
