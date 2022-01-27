@@ -16,7 +16,7 @@ public class FakePersonDataAcessService implements PersonDao {
 
     @Override
     public int insertPerson(Person person) {
-        DB.add(new Person(person.getId(),person.getName(), person.getPrice()));
+        DB.add(new Person(id,person.getName(), person.getPrice()));
         return 0;
     }
 
@@ -29,7 +29,7 @@ public class FakePersonDataAcessService implements PersonDao {
     public List<Person> selectPersonByPrice(String price) {
 
         List<Person> p = new ArrayList<>();
-        Person person = new Person(UUID.randomUUID(),"",price);
+        Person person = new Person(id,"",price);
         for (Person temp : DB) {
             if (temp.getPrice().equals(price)) {
                 p.add(temp);
