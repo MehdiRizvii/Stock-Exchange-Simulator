@@ -27,14 +27,23 @@ public class PersonService {
         return personDao.selectAllPeople();
     }
 
-    public List<Person> getPersonByPrice(String price) {
-        return personDao.selectPersonByPrice(price);
-    }
-    /*
     public List<Person> getPersonById(UUID id){
         return personDao.selectPersonById(id);
     }
+
+/*
+    public List<Person> getPersonByPrice(String price) {
+        return personDao.selectPersonByPrice(price);
+    }
 */
+    public int deletePerson(UUID id){
+        return personDao.deletePersonById(id);
+    }
+
+
+
+
+
 
 }
 

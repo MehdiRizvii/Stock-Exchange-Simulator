@@ -24,12 +24,14 @@ public interface PersonDao {
 
 
 
+    int deletePersonById(UUID id);
 
 
+    List<Person> selectPersonById(UUID id);
 
-    List<Person> selectPersonByPrice(String price);
+   // List<Person> selectPersonByPrice(String price);
 
-  //  List<Person> selectPersonById(UUID id);
+
 
 
 }

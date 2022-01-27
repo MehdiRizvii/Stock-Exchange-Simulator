@@ -26,6 +26,29 @@ public class FakePersonDataAcessService implements PersonDao {
     }
 
     @Override
+    public List<Person> selectPersonById(UUID id) {
+        List<Person> x = new ArrayList<>();
+        Person person = new Person(id,"","");
+        for (Person temps : DB) {
+            if (temps.getId().equals(id)) {
+                x.add(temps);
+            }
+        }
+        return x;
+    }
+
+
+
+    @Override
+    public int deletePersonById(UUID id) {
+        List<Person> personMaybe = selectPersonById(id);
+        DB.remove(personMaybe.get(0));
+        return 1;
+    }
+
+
+/*
+    @Override
     public List<Person> selectPersonByPrice(String price) {
 
         List<Person> p = new ArrayList<>();
@@ -37,6 +60,6 @@ public class FakePersonDataAcessService implements PersonDao {
         }
         return p;
     }
-
+*/
 
 }
