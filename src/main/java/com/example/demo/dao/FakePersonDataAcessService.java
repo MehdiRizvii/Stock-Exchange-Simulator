@@ -2,6 +2,8 @@ package com.example.demo.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 import com.example.demo.model.Person;
 
@@ -14,7 +16,7 @@ public class FakePersonDataAcessService implements PersonDao {
 
     @Override
     public int insertPerson(Person person) {
-        DB.add(new Person(person.getPrice(), person.getName()));
+        DB.add(new Person(person.getId(),person.getName(), person.getPrice()));
         return 0;
     }
 
@@ -27,7 +29,7 @@ public class FakePersonDataAcessService implements PersonDao {
     public List<Person> selectPersonByPrice(String price) {
 
         List<Person> p = new ArrayList<>();
-        Person person = new Person("", price);
+        Person person = new Person(UUID.randomUUID(),"",price);
         for (Person temp : DB) {
             if (temp.getPrice().equals(price)) {
                 p.add(temp);

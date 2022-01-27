@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Person;
 import com.example.demo.service.PersonService;
 
-@RequestMapping("api/v1/person")
+@RequestMapping("api/v1/Market")
 @RestController
 public class PersonController {
 
