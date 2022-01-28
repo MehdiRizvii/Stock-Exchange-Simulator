@@ -1,4 +1,4 @@
-#Stock Exchange Simulator
+# Stock Exchange Simulator
 
 Created a RESTful API using the Spring Framework to simulate a Stock Exchange with a limited pool of users
 
